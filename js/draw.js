@@ -1,6 +1,6 @@
 const draw = {}
 
-draw.path=(ctx, path, color="black")=>{
+draw.path = (ctx, path, color="black") => {
   ctx.strokeStyle = color
   ctx.lineWidth = 3
   ctx.beginPath()
@@ -11,4 +11,10 @@ draw.path=(ctx, path, color="black")=>{
   ctx.lineCap = "round"
   ctx.lineJoin = "round"
   ctx.stroke()
+}
+
+draw.paths = (ctx, paths, color="black") => {
+  for(const path of paths) {
+    draw.path(ctx, path, color)
+  }
 }
