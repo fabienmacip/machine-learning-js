@@ -46,7 +46,11 @@ class SketchPad {
       }
     }
     
-    this.canvas.onmouseup=()=>{
+/*     this.canvas.onmouseup=()=>{
+      this.isDrawing = false
+    }
+ */
+    document.onmouseup=()=>{
       this.isDrawing = false
     }
 
@@ -61,8 +65,13 @@ class SketchPad {
       this.canvas.onmousemove(loc)
     }
 
-    this.canvas.ontouchend=()=>{
+/*     this.canvas.ontouchend=()=>{
       this.canvas.onmouseup()
+    } */
+
+
+    document.ontouchend=()=>{
+      document.onmouseup()
     }
 
     // Bouton EFFACER
